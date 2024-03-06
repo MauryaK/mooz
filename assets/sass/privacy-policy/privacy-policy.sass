@@ -1,0 +1,75 @@
+@charset "UTF-8"
+@import '../_var'
+.privacyPolicyPage
+    background: url(../../images/shapeB.png)
+    background-repeat: no-repeat
+    background-position: 100% 100px
+    padding: 82px 0 50px
+    @include respond-to(screen-767)
+        padding: 70px 0 0
+    .heroSec
+        display: block
+        text-align: center
+        // background: var(--grey-light)
+        padding: 50px 0
+        
+        h1
+            color: var(--black)
+    .container
+        max-width: 1024px        
+    .content
+        h2,h3,h4,h5,h6           
+            margin: 25px 0 10px
+            color: var(--black)
+            @include respond-to(screen-767)
+                margin: 15px 0
+                line-height: 1.2
+        p,ul,ol,img
+            display: block
+            margin: 10px 0 
+            color: var(--grey-dark)
+        p
+            line-height: var(--font-siz-30)
+            text-align: justify
+            @include respond-to(screen-767)
+                line-height: var(--font-siz-24)
+        ul
+            padding-left: 15px
+            li
+                display: block
+                margin-bottom: 10px
+                position: relative
+                padding-left: 22px
+                &::before
+                    content: ""
+                    position: absolute
+                    left: 0
+                    top: 7px
+                    width: 9px
+                    height: 9px
+                    border-radius: 15px
+                    background: var(--btnbg)
+        h2
+            font-size: var(--font-siz-30)
+            @include respond-to(screen-767)
+                font-size: var(--font-siz-26)
+        h3
+            font-size: var(--font-siz-26)
+            @include respond-to(screen-767)
+                font-size: var(--font-siz-23)
+        h4
+            font-size: var(--font-siz-23)
+            @include respond-to(screen-767)
+                font-size: var(--font-siz-21)
+        h5
+            font-size: var(--font-siz-21)
+            @include respond-to(screen-767)
+                font-size: var(--font-siz-19)
+        h6              
+            font-size: var(--font-siz-18)
+        a
+            color: var(--btnbg)
+            text-decoration: underline
+            font-weight: var(--font-500)
+            &:hover
+                text-decoration: none

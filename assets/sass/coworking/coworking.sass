@@ -1,0 +1,318 @@
+@charset "UTF-8"
+@import '../_var'
+.banner
+    .bg
+        img
+            width: 100%
+            @include respond-to(screen-991)
+                height: 500px
+                object-fit: cover
+            @include respond-to(screen-520)
+                height: 440px
+    .banner-content
+        position: absolute
+        bottom: 95px
+        left: 0
+        right: 0
+        padding: 0 70px
+        @include respond-to(screen-1140)
+            padding: 0 25px
+        @include respond-to(screen-991)
+            padding: 0 15px
+        @include respond-to(screen-767)
+            bottom: 30px
+        @include respond-to(screen-520)
+            bottom: 60px
+        .content
+            max-width: 425px
+        h1,p
+            color: var(--white)
+        h1
+            font-size: 72px
+            line-height: 72px
+            margin-bottom: 15px
+            @include respond-to(screen-520)
+                margin-bottom: 10px
+                line-height: 46px
+                font-size: 45px
+                font-weight: var(--font-600)
+        p
+            font-weight: var(--font-500)
+            line-height: 24px
+            @include respond-to(screen-520)
+                font-size: var(--font-siz-16)
+                line-height: 1.4
+                margin-top: 20px
+        .linkArrAt
+            margin-top: 20px
+            @include respond-to(screen-520)
+                margin-top: 10px
+    .banner-content 
+        .content
+            h1,p,.linkArrAt
+                transform: translateY(200px)
+                opacity: 0
+                transition: .8s ease .5s
+    &.entered
+        .banner-wrapper 
+            .banner-content 
+                .content
+                    h1,p,.linkArrAt
+                        transform: translateY(0)
+                        opacity: 1
+                    h1
+                        transition-delay: .5s
+                    p
+                        transition-delay: .7s
+                    .linkArrAt
+                        transition-delay: .9s
+
+.homeSecB
+    background: var(--white)
+    padding: 55px 0 13px    
+    @include respond-to(screen-520)
+        padding: 25px 0 13px    
+    .secContainer
+        padding: 0 10px      
+        @include respond-to(screen-991)
+            padding: 0 15px
+        @include respond-to(screen-520)
+            padding-right: 0
+    .shap
+        position: absolute
+        right: 0
+        top: 35px
+    .wrap
+        padding: 0 50px
+        @include respond-to(screen-991)
+            padding: 0 
+        @include respond-to(screen-520)
+            padding-right: 15px
+    .heading
+        max-width: 895px
+        margin-bottom: 70px
+        @include respond-to(screen-520)
+            margin-bottom: 15px
+            text-align: center
+        h2
+            color: var(--black)
+            line-height: 40px
+            max-width: 450px
+            margin-bottom: 12px
+            @include respond-to(screen-520)
+                line-height: 28px
+                font-size: var(--h2)   
+            span
+                font-size: inherit    
+        p
+            font-size: var(--font-siz-18)
+            font-weight: var(--font-500)   
+    .Slider
+        @include respond-to(screen-992)
+            padding-left: 60px  
+    .shap
+        overflow: hidden
+        img
+            transform: translateX(285px)
+            opacity: 0
+            transition: 1s ease
+    .heading
+        h2,p
+            transform: translateY(50px)
+            opacity: 0
+            transition: .8s ease
+    &.entered
+        .shap
+            img
+                transform: translateX(0px)
+                opacity: 1
+        .heading
+            h2,p
+                transform: translateY(0px)
+                opacity: 1
+            h2
+                transition-delay: .2s
+            p
+                transition-delay: .5s
+.homeSecB
+    .heading
+        h2
+            line-height: 33px
+.coWorkSecA
+    background: var(--white)
+    padding: 70px 0   
+    @include respond-to(screen-767)
+        padding: 30px 0     
+    .headingIn
+        max-width: 400px
+        width: 100%
+        margin: 0 auto 70px  
+        @include respond-to(screen-767)
+            margin: 0 auto 30px  
+    .img
+        img
+            width: 100%
+            display: block 
+    .headingIn
+        h2,p
+            transform: translateY(50px)
+            opacity: 0
+            transition: .8s ease
+    &.entered
+        .headingIn
+            h2,p
+                transform: translateY(0px)
+                opacity: 1
+            h2
+                transition-delay: .2s
+            p
+                transition-delay: .5s
+    .flex
+        @include respond-to(screen-767)
+            flex-direction: column-reverse
+        .box.secTake.black
+            @include respond-to(screen-767)
+                padding-top: 30px
+.coWorkSecB   
+    background: linear-gradient(to right, var(--primaryDark) 0, var(--secondaryDark) 86%)
+    padding: 70px 0     
+    
+    .headingIn
+        margin-bottom: 25px
+        max-width: 380px
+        @include respond-to(screen-767)
+            margin-top: 30px
+        h2
+            color: var(--white)
+    .list-feat 
+        .flex
+            margin: 40px 0 20px
+    .secTake
+        padding-left: 60px
+        @include respond-to(screen-991)
+            padding-left: 0
+.coWorkSecC   
+    .headingIn
+        max-width: 460px  
+        h2
+            em
+                display: block
+                font-style: inherit  
+    .flex 
+        .col-2
+            @include respond-to(screen-767)
+                flex: 0 1 100%
+                max-width: 100%
+                padding: 0
+.box.secTake
+    .btn-form
+       .btn,.whats
+            min-width: 180px
+            transition: .5s ease
+            font-weight: var(--font-600)
+            padding-top: 8px
+            padding-bottom: 8px
+            @include respond-to(screen-991)
+                min-width: 154px
+       .btn
+            display: inline-block
+            width: auto
+            margin-right: 15px
+            background-position: 0 0
+            border: 1px solid var(--white)
+            @include respond-to(screen-991)
+                margin-right: 8px
+    &.black
+        padding-right: 60px  
+        @include respond-to(screen-991)     
+            padding-right: 0
+        .list-feat
+            .card
+                .icon
+                    border: 1px solid #bababa
+        .btn-form
+            .btn
+                &:hover
+                    background-position: 180px 0
+                    
+                    // border-color: var(--btnbg)
+                    // background: var(--white)
+                    // color: var(--btnbg)
+                &.focus
+                    border-color: var(--btnbg)
+                    font-weight: var(--font-600)
+                    background: var(--white)
+                    color: var(--btnbg)
+            .whats
+                border-color: var(--btnbg)
+                font-weight: var(--font-600)
+                background: var(--white)
+                svg,span
+                    color: var(--btnbg)
+                    transition: .5s ease
+                &:hover
+                    background: linear-gradient(to right, var(--primaryDark) 5%, var(--secondaryDark) 50%)
+                    svg,span
+                        color: var(--white)
+    &.white
+        p
+            color: var(--white)
+        .list-feat
+            .card
+                .icon
+                    border: 1px solid var(--white)
+                    img
+                        filter: grayscale(1) brightness(0) invert(1)
+        .btn-form
+            .btn
+                background: var(--white)
+                color: var(--btnbg)
+                &:hover
+                    background: linear-gradient(to right, var(--primaryDark) 5%, var(--secondaryDark) 50%)
+                    color: var(--white)
+                &.focus
+                    background: transparent
+                    border: 1px solid var(--white)
+                    color: var(--white)
+            .whats
+                background: transparent
+                border: 1px solid var(--white)
+                color: var(--white)
+                &:hover,&.focus
+                    background: var(--white)
+                    color: var(--btnbg)
+                    svg
+                        color: var(--btnbg)
+
+.list-feat
+    .flex
+        margin: 60px 0 30px
+        @include respond-to(screen-991)
+            margin: 25px 0
+        .col
+            @include respond-to(screen-991)
+                flex: 0 1 100%
+                max-width: 100%
+                padding: 0
+    .card
+        padding-left: 68px
+        margin-bottom: 30px
+        @include respond-to(screen-991)
+            margin-bottom: 25px
+        .icon
+            position: absolute
+            left: 0
+            top: 0
+            width: 50px
+            height: 50px
+            border-radius: 50px
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+    .content
+        p
+            font-size: var(--font-siz-14)
+    
+            
+    

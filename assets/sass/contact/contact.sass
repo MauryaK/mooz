@@ -1,0 +1,303 @@
+@charset "UTF-8"
+@import '../_var'
+
+.banner
+    .bg
+        img
+            width: 100%
+            @include respond-to(screen-991)
+                height: 500px
+                object-fit: cover
+            @include respond-to(screen-520)
+                height: 440px
+        &.overlay_after
+            &::after
+                background: linear-gradient(to top, rgb(0 0 0), transparent)
+
+    .banner-content
+        position: absolute
+        bottom: 100px
+        left: 0
+        right: 0
+        padding: 0 70px
+        @include respond-to(screen-1140)
+            padding: 0 25px
+        @include respond-to(screen-991)
+            padding: 0 15px
+        @include respond-to(screen-767)
+            bottom: 30px
+        @include respond-to(screen-520)
+            bottom: 60px
+        .content
+            max-width: 465px
+            @include respond-to(screen-991)
+                max-width: 365px
+            @include respond-to(screen-675)
+                max-width: 352px
+        h1,p,.date
+            color: var(--white)
+        .date
+            font-size: var(--font-siz-14)
+        h1
+            font-size: 60px
+            line-height: 60px
+            margin-bottom: 15px
+            @include respond-to(screen-991)
+                margin-bottom: 10px
+                line-height: 46px
+                font-size: 45px
+                font-weight: var(--font-600)
+            @include respond-to(screen-767)
+                margin-top: 10px
+                font-size: 26px
+                line-height: 30px
+            @include respond-to(screen-520)
+                margin-bottom: 0
+                font-size: 36px
+                line-height: 38px
+        p
+            font-weight: var(--font-500)
+            line-height: 24px
+            @include respond-to(screen-991)
+                line-height: 20px
+            @include respond-to(screen-675)
+                font-size: var(--font-siz-16)
+                line-height: 1.4
+                margin-top: 20px
+            @include respond-to(screen-520)
+                margin-top: 12px
+        .linkArrAt
+            margin-top: 20px
+            @include respond-to(screen-520)
+                margin-top: 10px    
+
+.contact-SecA                
+    padding: 100px 0
+    background: var(--white) url(../../images/contact/shapA.png)
+    background-position: center
+    background-repeat: no-repeat
+    background-position: 100% 95%
+    @include respond-to(screen-991)
+        padding: 40px 0
+    @include respond-to(screen-675)
+        background: var(--white)
+    .colA
+        flex: 0 1 65%
+        max-width: 65%
+        width: 100%
+        @include respond-to(screen-1140)
+            flex: 0 1 50%
+            max-width: 50%
+        @include respond-to(screen-675)
+            flex: 0 1 100%
+            max-width: 100%
+            
+
+    .colB
+        flex: 0 1 35%
+        max-width: 35%
+        width: 100%
+        @include respond-to(screen-1140)
+            flex: 0 1 50%
+            max-width: 50%
+            padding-left: 45px
+        @include respond-to(screen-991)
+            padding-left: 20px
+        @include respond-to(screen-675)
+            flex: 0 1 100%
+            max-width: 100%
+            padding: 0
+    .bg
+        img
+            background: url(../../images/contact/bga.jpg)
+            background-size: cover
+            background-position: center
+            animation: bganimate 120s linear infinite
+            @include respond-to(screen-675)
+                max-width: 200px
+                margin: 0 auto
+                display: block
+    .offiecDetail
+        h2
+            font-size: var(--font-siz-48)
+            line-height: var(--font-siz-48)
+            margin-bottom: 55px
+            @include respond-to(screen-675)
+                font-size: var(--font-siz-35)
+                line-height: var(--font-siz-35)
+                margin: 30px 0 30px
+                text-align: center
+        .list
+            margin-bottom: 35px
+            position: relative
+            display: flex
+            flex-direction: row
+            align-items: center
+            @include respond-to(screen-991)
+                margin-bottom: 10px
+            @include respond-to(screen-675)
+                margin-bottom: 15px
+                flex-direction: column
+                padding: 25px
+                border: 1px solid #f2f2f2
+                border-radius: 5px
+            .icon
+                width: 49px
+                height: 49px
+                border-radius: 50px
+                border: 1px solid var(--btnbg)
+                display: flex
+                align-items: center
+                justify-content: center
+                flex-direction: column
+                margin-right: 30px
+                @include respond-to(screen-991)
+                    margin-right: 20px
+                @include respond-to(screen-675)
+                    margin: 0 auto 15px
+            p
+                flex-grow: 1
+                flex: 1
+                color: var(--grey-dark)
+                a:hover
+                    color: var(--btnbg)
+            a
+                transition: .5s ease
+                color: var(--grey-dark)
+            .getd
+                position: absolute
+                bottom: -10px
+                left: 80px
+                @include respond-to(screen-991)
+                    left: 70px
+                @include respond-to(screen-675)
+                    position: static
+                    margin-top: 8px
+                a
+                    font-size: var(--font-siz-14)
+                    font-weight: var(--font-500)
+                    color: var(--btnbg)
+                    display: inline-block
+                    position: relative
+                    background: url('../../icons/nextServ.png')
+                    background-repeat: no-repeat
+                    background-position: 100% 4px
+                    background-size: 7px
+                    padding-right: 17px
+.bgA
+    background: var(--white) url(../../images/contact/bg.jpg)
+    background-position: center
+    background-position: right bottom
+    background-size: cover
+    padding: 300px 0
+    animation: bganimate 60s linear infinite
+    @include respond-to(screen-991)
+        padding: 180px 0 
+    @include respond-to(screen-675)
+        padding: 70px 0
+
+.contactFormSec
+    background: var(--white)
+    padding: 110px 0 160px
+    @include respond-to(screen-991)
+        padding: 40px 0
+    .headingIn
+        max-width: 450px
+        @include respond-to(screen-991)
+            text-align: center
+            margin: 0 auto 40px
+        h2
+            font-size: 60px
+            color: var(--black)
+            line-height: 55px
+            margin-bottom: 15px
+            @include respond-to(screen-991)
+                margin-bottom: 8px
+                font-size: 40px
+                line-height: 42px
+            span
+                display: block
+                @include respond-to(screen-991)
+                    display: inline-block
+        p
+            color: var(--grey-dark)
+            font-weight: var(--font-500)
+    .container > .flex > .col-2
+        @include respond-to(screen-991)
+            flex: 0 1 100%
+            max-width: 100%
+    .contactForm
+        .form
+            .col-2
+            .form-group
+                margin-bottom: 20px
+                label
+                    font-size: var(--font-siz-16)
+                    color: var(--grey-dark)
+                    background: var(--white)
+                    padding: 0 4px
+                    left: 15px
+                    top: 18px
+                .form-control
+                    border: 1px solid var(--btnbg)
+                    border-radius: 5px
+                    background: var(--white)
+                    padding: 8px 15px
+                    height: 56px
+                    color: var(--black)
+                    font-size: var(--font-siz-16)
+                    &::placeholder
+                        font-size: var(--font-siz-16)
+                        color: var(--grey-dark)
+                        opacity: 0
+                        transition: .5s ease
+                        
+                    &:focus 
+                        &::placeholder
+                            opacity: 1
+                        ~ label
+                            top: -10px
+                &.valid
+                    label
+                        top: -10px
+                        font-size: var(--font-siz-14)
+                        color: var(--btnbg)
+            .customDropDown 
+                .wrapper 
+                    .selectedBox
+                        border: 1px solid var(--btnbg)
+                        border-radius: 5px
+                        background: var(--white)
+                        padding: 14px 15px
+                        height: 56px
+                        color: var(--black)
+                        font-size: var(--font-siz-16)
+                        &.servIcon
+                            &::before
+                                bottom: 0
+                                width: 35px
+                        p
+                            color: var(--grey-dark)
+                            font-weight: var(--font-normal)
+
+
+                        .label
+                            font-size: var(--font-siz-14)
+                            color: var(--btnbg)
+                            background: var(--white)
+                            padding: 0 4px
+                            font-weight: var(--font-normal)
+                        &.active
+                            .label
+                                opacity: 1
+            .btn-form
+                .btn
+                    width: 170px
+                    @include respond-to(screen-675)
+                        width: 100%
+            //         background-position: 0 0
+            //         transition: .5s ease
+            //         &:hover
+            //             background-position: 170px 0
+                        
+

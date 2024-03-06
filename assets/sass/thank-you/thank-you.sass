@@ -1,0 +1,91 @@
+@charset "UTF-8"
+@import '../_var'
+
+.banner
+    .bg
+        img
+            width: 100%
+            @include respond-to(screen-1141)
+                height: 100vh
+                object-fit: cover
+            @include respond-to(screen-991)
+                height: 500px
+                object-fit: cover
+            @include respond-to(screen-520)
+                height: 440px
+        &.overlay_after
+            &::after
+                height: 100%
+                background: linear-gradient(to top, rgb(0 0 0), transparent)
+
+    .banner-content
+        position: absolute
+        bottom: 130px
+        left: 0
+        right: 0
+        padding: 0 70px
+        @include respond-to(screen-1140)
+            padding: 0 25px
+        @include respond-to(screen-991)
+            padding: 0 15px
+        @include respond-to(screen-767)
+            bottom: 30px
+        @include respond-to(screen-520)
+            bottom: 30px
+        .content
+            margin: 0 auto
+            max-width: 565px
+            text-align: center
+            @include respond-to(screen-675)
+                max-width: 372px
+            &.Something
+                max-width: 665px
+                h1
+                    span
+                        display: block
+
+        h1,p
+            color: var(--white)
+
+        .date
+            font-size: var(--font-siz-14)
+        h1
+            font-size: 60px
+            line-height: 60px
+            margin-bottom: 20px
+            @include respond-to(screen-991)
+                margin-bottom: 10px
+                line-height: 46px
+                font-size: 45px
+                font-weight: var(--font-600)
+            @include respond-to(screen-767)
+                margin-top: 10px
+                font-size: 35px
+                line-height: 38px
+            
+        p
+            font-weight: var(--font-500)
+            line-height: 24px
+            @include respond-to(screen-520)
+                line-height: 1.4
+                margin-top: 20px
+        ul
+            text-align: center
+            margin: 25px 0
+            li
+                display: inline-block
+                margin: 0 10px
+                @include respond-to(screen-675)
+                    margin: 0 6px
+                a
+                    color: var(--white)
+                    font-style: normal
+                    transition: .5s ease
+                    &:hover
+                        // color: var(--btnbg)
+        .btn-form
+            text-align: center
+            .btn
+                width: auto
+                display: inline-block
+                padding: 8.5px 28px

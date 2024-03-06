@@ -1,0 +1,767 @@
+@charset "UTF-8"
+@import '../_var'
+.banner
+    .bg
+        line-height: 0
+        background: url('../../images/home/bg2.jpg')
+        background-size: cover
+        video
+            width: 100%
+            height: 100vh
+            object-fit: cover  
+            @include respond-to(screen-1140)
+                height: auto
+            @include respond-to(screen-520)
+                height: 440px
+                object-fit: cover
+
+.home-banner        
+    .banner-wrapper    
+        position: relative
+        .banner-content
+            position: absolute
+            bottom: 95px
+            left: 0
+            right: 0
+            padding: 0 70px
+            @include respond-to(screen-1140)
+                padding: 0 25px
+            @include respond-to(screen-991)
+                padding: 0 15px
+            @include respond-to(screen-767)
+                bottom: 30px
+            @include respond-to(screen-520)
+                bottom: 60px
+            .content
+                max-width: 570px
+                @include respond-to(screen-1140)
+                    max-width: 510px
+                @include respond-to(screen-520)
+                    max-width: 290px
+                    margin: 0 auto
+                    text-align: center
+            h1,p
+                color: var(--white)
+            h1
+                line-height: 48px
+                @include respond-to(screen-520)
+                    line-height: 46px
+                    font-size: 45px
+                    font-weight: var(--font-600)
+                    padding: 0 20px
+            p
+                font-size: var(--font-siz-20)
+                font-weight: var(--font-500)
+                line-height: 48px
+                @include respond-to(screen-520)
+                    font-size: var(--font-siz-16)
+                    line-height: 1.4
+                    margin-top: 20px
+    .banner-content 
+        .content
+            h1,p
+                transform: translateY(200px)
+                opacity: 0
+                transition: .8s ease .5s
+    .banner-form
+        transform: translateY(-20px)
+        opacity: 0
+        transition: .8s ease 1s
+    &.entered
+        .banner-wrapper 
+            .banner-content 
+                .content
+                    h1,p
+                        transform: translateY(0)
+                        opacity: 1
+                    h1
+                        transition-delay: .5s
+                    p
+                        transition-delay: .7s
+        .banner-form
+            transform: translateY(0px)
+            opacity: 1
+
+.banner-form                
+    position: absolute
+    right: 70px
+    bottom: 70px
+    max-width: 430px
+    width: 100%
+    @include respond-to(screen-991)
+        position: static
+        padding: 0 10px
+        max-width: 100%
+    .form-wrapper
+        background: var(--white)
+        padding: 35px 30px 55px
+        border-radius: 15px
+        @include respond-to(screen-991)
+            padding: 30px 15px
+            position: relative
+            top: -27px
+            margin-bottom: -27px
+    .form
+        .box
+            margin-bottom: 25px
+        .col-1
+            @include respond-to(screen-991)
+                flex: 0 1 33.33%
+                max-width: 33.33%
+                width: 100%
+            @include respond-to(screen-520)
+                flex: 0 1 100%
+                max-width: 100%
+                padding: 0
+        .customBoxA
+            max-width: 60%
+            flex: 0 1 60%
+            width: 100%
+            padding: 0 8px
+            @include respond-to(screen-991)
+                flex: 0 1 33.33%
+                max-width: 33.33%
+                width: 100%
+            @include respond-to(screen-520)
+                max-width: 100%
+                flex: 0 1 100%
+                padding: 0
+        .customBoxB
+            max-width: 40%
+            flex: 0 1 40%
+            width: 100%
+            padding: 0 8px
+            @include respond-to(screen-991)
+                flex: 0 1 33.33%
+                max-width: 33.33%
+                width: 100%
+            @include respond-to(screen-520)
+                max-width: 100%
+                flex: 0 1 100%
+                padding: 0
+        h4
+            max-width: 260px
+            margin: 0 auto
+            color: var(--black)
+            text-align: center
+            margin-bottom: 35px
+            line-height: 20px
+            @include respond-to(screen-520)
+                font-size: 25px
+                line-height: 29px
+                margin-bottom: 25px
+            span
+                font-size: var(--font-siz-36)
+                line-height: 1
+        .btn-form
+            margin-top: 15px
+            @include respond-to(screen-520)
+                margin: 0
+
+.homeSecA
+    @include respond-to(screen-520)
+        padding: 15px 0
+    .col-2
+        padding: 0
+        @include respond-to(screen-520)
+            flex: 0 1 100%
+            max-width: 100%
+    .img
+        position: relative
+        @include respond-to(screen-992)
+            overflow: hidden
+        @include respond-to(screen-767)
+            height: 100%
+        img
+            width: 100%
+            @include respond-to(screen-992)
+                filter: blur(5px)
+                transition: .8s ease
+            @include respond-to(screen-767)
+                height: 360px
+                overflow: hidden
+                object-fit: cover
+    .videoIcon
+        bottom: 48px
+        right: 31px
+        @include respond-to(screen-767)
+            bottom: 20px
+            right: 20px
+        img
+            width: auto
+            @include respond-to(screen-767)
+                height: auto
+
+    .bg
+        height: 100%
+        background: linear-gradient(to right, #042d4f, #10426c )
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        @include respond-to(screen-992)
+            overflow: hidden
+        @include respond-to(screen-860)
+            padding: 0 15px
+        @include respond-to(screen-520)
+            padding: 45px 15px
+        &::before
+            content: ""
+            position: absolute
+            left: 0
+            right: 0
+            top: 0
+            bottom: 0
+            background: url('../../icons/shapeA.png')
+            background-repeat: no-repeat
+            background-position: center
+            @include respond-to(screen-520)
+                max-width: 100%
+                background-size: contain
+    .content
+        max-width: 415px
+        width: 100%
+        margin: 0 auto
+        text-align: center
+        position: relative
+        z-index: 1
+        .icon
+            img
+                @include respond-to(screen-860)
+                    max-width: 100px
+                @include respond-to(screen-767)
+                    max-width: 70px
+        h2,p
+            color: var(--white)
+        h2
+            line-height: 36px
+            margin: 35px 0 22px
+            @include respond-to(screen-860)
+                margin: 15px 0
+            @include respond-to(screen-767)
+                margin: 8px 0
+            @include respond-to(screen-520)
+                line-height: 28px
+                margin: 8px auto
+                max-width: 320px
+        p
+            color: #f0f3f5
+            margin-bottom: 15px
+            @include respond-to(screen-767)
+                margin-bottom: 8px
+        .link
+            margin-top: 30px
+    .icon
+        img
+            transform: scale(9)
+            opacity: 0
+            transition: .9s ease
+    .content
+        h2,p,.link
+            transform: translateY(80px)
+            opacity: 0
+            transition: .8s ease
+    &.entered
+        .img
+            img
+                filter: blur(0px)
+        .icon
+            img
+                opacity: 1
+                transform: scale(1)
+        .content
+            h2,p,.link
+                opacity: 1
+                transform: translateY(0)
+            h2
+                transition-delay: .3s
+            p
+                transition-delay: .5s
+            .link
+                transition-delay: .7s
+.homeSecB
+    background: var(--white)
+    padding: 55px 0 13px    
+    @include respond-to(screen-520)
+        padding: 25px 0 13px    
+    .secContainer
+        padding: 0 10px      
+        @include respond-to(screen-991)
+            padding: 0 15px
+    .shap
+        position: absolute
+        right: 0
+        top: 35px
+    .wrap
+        padding: 0 50px
+        @include respond-to(screen-991)
+            padding: 0 
+    .heading
+        max-width: 495px
+        margin-bottom: 35px
+        h2
+            color: var(--black)
+            line-height: 40px
+    .tabingWro
+        padding-bottom: 35px
+        @include respond-to(screen-520)
+            padding-bottom: 18px
+            width: 100%
+            overflow: hidden
+            overflow-x: scroll
+            margin-bottom: 25px
+            &::-webkit-scrollbar
+                width: 5px
+                height: 5px
+            &::-webkit-scrollbar-track
+                box-shadow: unset
+                background: var(--grey-light)
+            &::-webkit-scrollbar-thumb
+                background-color: var(--secondaryDark)
+        ul
+            @include respond-to(screen-520)
+                display: flex
+                flex-wrap: nowrap
+                width: 515px
+            li
+                display: inline-block
+                cursor: pointer
+                padding: 6px 0 15px
+                position: relative
+                font-size: var(--font-siz-18)
+                font-weight: var(--font-500)
+                &::before
+                    content: ""
+                    background: var(--secondaryDark)
+                    width: 0
+                    position: absolute
+                    bottom: 0
+                    left: 0
+                    height: 3px
+                    border-radius: 1.5px
+                    transition: width .5s ease
+                &:hover,&.active
+                    color: var(--secondaryDark)
+                    &::before
+                        width: 100%
+                &:not(:last-child)
+                    margin-right: 55px
+                    @include respond-to(screen-520)
+                        margin-right: 15px
+    .shap
+        overflow: hidden
+        img
+            transform: translateX(285px)
+            opacity: 0
+            transition: 1s ease
+    &.entered
+        .shap
+            img
+                transform: translateX(0px)
+                opacity: 1
+    .flex
+        .col
+            @include respond-to(screen-992)
+                flex: 0 1 33.33%
+                max-width: 33.33%
+                width: 100%
+                padding: 0 8px
+                margin-bottom: 15px
+    .Slider
+        position: relative
+        .bgEff
+            position: absolute
+            top: 0
+            left: 0
+            right: 0
+            bottom: 0
+            background: #fffffff2
+            z-index: 11
+            .wr
+                width: 100%
+                height: 100%
+                display: flex
+                align-items: center
+                justify-content: center
+                img
+                    width: 160px
+
+
+   
+.homeSecC
+    .bg
+        padding: 280px 65px
+        transition: .5s ease
+        background: url('../../images/home/bg1.jpg')
+        background-size: cover !important
+        background-repeat: no-repeat !important
+        position: relative
+        @include respond-to(screen-991)
+            padding: 140px 25px
+        @include respond-to(screen-520)
+            padding: 80px 15px
+        &::before
+            content: ""
+            position: absolute
+            left: 0
+            right: 0
+            top: 0
+            bottom: 0
+            background: linear-gradient(to right, var(--black), transparent)
+            opacity: .7
+            @include respond-to(screen-520)
+                background: var(--black)
+    .content
+        max-width: 440px
+        width: 100%
+        position: relative
+        @include respond-to(screen-520)
+            max-width: 340px
+            text-align: center
+        h2,p
+            color: var(--white)
+        h2
+            font-size: var(--font-siz-48)
+            line-height: var(--font-siz-48)
+            @include respond-to(screen-520)
+                max-width: 280px
+                margin: 0 auto
+                line-height: 28px
+                font-size: var(--h2)
+        p
+            margin: 12px 0 26px
+            @include respond-to(screen-520)
+                margin: 12px 0 15px
+    .imgDots
+        position: absolute
+        bottom: 80px
+        left: 0
+        right: 0
+        text-align: center
+        z-index: 2
+        @include respond-to(screen-520)
+            bottom: 20px
+        .dot
+            display: inline-block
+            margin: 0 6px
+            cursor: pointer
+            width: 10px
+            height: 10px
+            border-radius: 12px
+            background: #aaa8a2
+            transition: width .5s ease
+            &.active
+                width: 28px
+                background: var(--white)
+            &:hover
+                background: var(--white)
+    .content
+        h2,p,.act
+            transform: translateY(50px)
+            opacity: 0
+            transition: 1s ease
+    &.entered
+        .content 
+            h2,p,.act
+                transform: translateY(0px)
+                opacity: 1
+            h2
+                transition-delay: .2s
+            p
+                transition-delay: .4s
+            .act
+                transition-delay: .5s
+.homeSecD
+    padding: 55px 0  150px
+    background: var(--white) url('../../images/home/bui.png')
+    background-repeat: no-repeat
+    background-position: 0 100%
+    background-repeat: repeat-x
+    animation: bganimate 60s linear infinite
+    @include respond-to(screen-520)
+        padding: 45px 0 70px
+    .heading
+        max-width: 550px
+        width: 100%
+        margin: 0 auto 45px
+        text-align: center
+        @include respond-to(screen-520)
+            margin-bottom: 35px
+
+        h2
+            color: var(--black)
+            @include respond-to(screen-520)
+                line-height: 28px
+                font-size: var(--h2)
+                margin-bottom: 15px
+            // span
+            //     font-size: 72px
+            //     @include respond-to(screen-520)
+            //         font-size: 50px
+    .overlay_after
+        position: relative
+        overflow: hidden
+        border-radius: 15px
+        &::after
+            height: 98px
+    .item
+        a
+            display: block
+        p
+            position: absolute
+            bottom: 20px
+            left: 0
+            right: 0
+            text-align: center
+            z-index: 1
+            color: var(--white)
+            font-weight: var(--font-500)
+            @include respond-to(screen-520)
+                bottom: 10px
+    .heading
+        h2,p
+            transform: translateY(50px)
+            opacity: 0
+            transition: .8s ease
+    &.entered
+        .heading
+            h2,p
+                transform: translateY(0px)
+                opacity: 1
+            h2
+                transition-delay: .2s
+            p
+                transition-delay: .5s
+
+.homeSecE
+    background: url('../../images/home/bg3.jpg')
+    background-size: cover
+    padding: 115px 0
+    @include respond-to(screen-520)
+        padding: 40px 0 55px
+    .md-hidden ~
+        .col-2
+            @include respond-to(screen-991)
+                flex: 0 1 100%
+                max-width: 100%
+                width: 100%
+    &::before 
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        background: linear-gradient(45deg, #0f426b9e, #042e50f7, #042e50)
+    .shape
+        height: 100%
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        overflow: hidden
+        img,video
+            max-width: 700px
+            display: block
+            margin: 0 auto
+            mask-image: url("../../images/Mooz logo w_color-01.svg")
+            mask-position: center
+            -webkit-mask-repeat: no-repeat
+            mask-repeat: no-repeat
+            @include respond-to(screen-1140)
+                max-width: 570px
+            @include respond-to(screen-991)
+                max-width: 470px
+
+    .form-Enquery
+        position: relative
+        z-index: 1
+        padding-left: 30px
+        @include respond-to(screen-991)
+            padding: 0
+            max-width: 768px
+            margin: 0 auto
+        .checkbox-group
+            margin-bottom: 45px
+            @include respond-to(screen-520)
+                margin-bottom: 25px
+        .customDropDown
+            margin-bottom: 25px
+            .listDropDown
+                z-index: 3
+            .wrapper 
+                .selectedBox 
+                    border-bottom-color: var(--white) 
+                    padding-bottom: 15px
+                    min-height: 45px
+                    p,.label
+                        color: #9bacba
+                        font-weight: var(--font-normal)
+                        font-size: var(--font-siz-14)
+                    &.servIcon
+                        &::before
+                            background: url(../../icons/servIcon_w.png)
+                            background-repeat: no-repeat
+                            background-position: center
+                    &.active
+                        p,.label
+                            color: var(--white)
+                    .label
+                        font-size: var(--font-siz-11)
+        h2
+            color: var(--white)
+            line-height: 50px
+            margin-bottom: 35px
+            @include respond-to(screen-520)
+                line-height: 38px
+                text-align: center
+            span  
+                font-size: 50px
+                display: block
+                @include respond-to(screen-520)
+                    font-size: 38px
+                    display: inline-block
+    .btn-form 
+        .btn
+            padding: 10px 22px
+            width: auto
+            min-width: 220px
+    .shape
+        transform: translateY(-80px)
+        opacity: 0
+        transition: 1s ease
+    .form-Enquery 
+        h2
+            transform: translateY(-80px)
+            opacity: 0
+            transition: 1s ease
+
+    &.entered
+        .shape
+            transform: translateY(0px)
+            opacity: 1
+            transition-delay: .2s
+        .form-Enquery 
+            h2
+                transform: translateY(1px)
+                opacity: 1
+                transition-delay: .4s
+
+
+
+.homeSecG
+    background: #fbfbfb
+    padding-bottom: 65px
+    @include respond-to(screen-520)
+        padding-bottom: 0
+    .container-full
+        padding-left: 130px
+        padding-right: 0
+        @include respond-to(screen-991)
+            padding: 0 15px
+    .heading
+        max-width: 636px
+        width: 100%
+        margin: 0 auto
+        text-align: center
+        margin-bottom: 70px
+        padding-top: 75px
+        @include respond-to(screen-520)
+            margin-bottom: 30px
+            padding-top: 15px
+        h2
+            color: var(--black)     
+            margin-bottom: 8px   
+        .icon
+            position: absolute
+            top: -40px
+            margin: 0 auto
+            display: block
+            left: 0
+            right: 0
+            @include respond-to(screen-520)
+                position: static
+            svg
+                width: 145px  
+                @include respond-to(screen-520)
+                    width: 90px  
+                    height: 90px
+    .slideD
+        .item
+            margin-bottom: 20px
+            position: relative
+            .img
+                overflow: hidden
+                border-radius: 15px  
+                &.overlay_after
+                    position: relative
+                    overflow: hidden
+                    border-radius: 15px
+                    &::after
+                        height: 98px
+                        @include respond-to(screen-520)
+                            height: 100%
+
+            .videoIcon
+                position: absolute
+                bottom: 30px
+                right: 30px
+                width: 51px
+                height: 51px
+                background: transparent
+                border: 1px solid var(--white)
+                z-index: 2
+                @include respond-to(screen-767)
+                    width: 47px
+                    height: 47px
+                @include respond-to(screen-520)
+                    bottom: auto
+                    top: 40%
+                    right: auto
+                    left: 50%
+                    transform: translate(-50%, -50%)
+                img
+                    width: auto
+                    filter: grayscale(1) brightness(0) invert(1)
+                    width: 12px
+                    @include respond-to(screen-767)
+                        width: 10px
+            .content
+                position: absolute
+                bottom: 0
+                padding: 25px
+                left: 0
+                right: 0
+                z-index: 1
+                @include respond-to(screen-520)
+                    padding: 8px
+                    text-align: center
+                .name,.locat
+                    color: var(--white)
+                .name
+                    font-size: var(--font-siz-18)
+                    font-weight: var(--font-600)
+                    @include respond-to(screen-520)
+                        font-size: var(--font-siz-16)
+                .locat
+                    font-size: var(--font-siz-14)
+    .heading 
+        .icon 
+            svg
+                transform: translateY(-50px)
+                opacity: 0
+                transition: 1s ease
+        h2
+            transform: translateY(20px)
+            opacity: 0
+            transition: 1s ease .4s
+    &.entered
+        .heading 
+            .icon 
+                svg
+                    transform: translateY(0px)
+                    opacity: 1
+            h2
+                transform: translateY(0px)
+                opacity: 1
+                         

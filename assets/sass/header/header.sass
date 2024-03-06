@@ -1,0 +1,902 @@
+@import  '../_common'
+
+header
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    z-index: 3
+    &::before
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        background: linear-gradient(to right, var(--primaryDark) 5%, var(--secondaryDark) 50%)
+        height: 0
+        opacity: 1
+        transition: .5s ease
+        @include respond-to(screen-767)
+            background: var(--primaryDark)
+    .container-full
+        @include respond-to(screen-1140)
+            padding: 0 15px
+    .flex
+        align-items: center
+    .asideRight
+        max-width: 410px
+        flex: 0 1 410px
+        width: 100%
+        @include respond-to(screen-991)
+            flex-grow: 1
+            flex: 1
+            max-width: none
+    
+    &.header-fixed,&.header-strip
+        &::before
+            height: 100%  
+        .logo
+            a
+                img
+                    max-width: 80px
+        .bookBtn
+            .btn
+                background: var(--white)
+                color: var(--btnbg)
+                // background-position: 124px 0
+                // color: var(--white)
+                // border-color: var(--white)
+                // @include respond-to(screen-675)
+                //     background-position: 118px 0
+
+                // &:hover
+                //     background-position: 248px 0
+                //     @include respond-to(screen-675)
+                //         background-position: 234px 0
+                    
+
+    .header-wrapper
+        position: relative
+        z-index: 1
+    .bookBtn
+        @include respond-to(screen-991)
+            order: 1
+            margin-right: 15px
+        @include respond-to(screen-767)
+            margin-right: 8px
+.no-header
+    header
+        .bookBtn
+            .btn
+                background: var(--white)
+                color: var(--btnbg)
+.logo
+    max-width: 160px
+    flex: 0 1 160px
+    width: 100%
+    @include respond-to(screen-1140)
+        max-width: 120px
+        flex: 0 1 120px
+    @include respond-to(screen-767)
+        max-width: 90px
+        flex: 0 1 90px
+    a
+        max-width: 111px
+        display: block
+        img
+            max-width: 100%
+            padding: 6px 0
+            transition: .5s ease
+            display: block
+.navList
+    flex-grow: 1
+    flex: 1
+    padding: 0 3px
+    >ul
+        >li
+            display: inline-block
+            &:last-child
+                @include respond-to(screen-1140)
+                    display: none
+            >a
+                padding: 18px 23px
+                display: block
+                color: var(--white)
+                position: relative
+                @include respond-to(screen-1140)
+                    padding: 18px 10px
+                &::after
+                    content: ""
+                    position: absolute
+                    display: block
+                    border-left: 9px solid rgba(0,0,0,0)
+                    border-right: 9px solid rgba(0,0,0,0)
+                    border-bottom: 11px solid var(--white)
+                    width: 16px
+                    height: 16px
+                    margin: 0 auto 4px
+                    bottom: -6px
+                    left: 50%
+                    transform: translateX(-50%)
+                    opacity: 0
+                    transition: all .5s ease
+            &.has-nav
+                >a
+                    display: inline-block
+                &:hover
+                    >a
+                        &::after
+                            opacity: 1
+                    .navDropdown
+                        transform: translateY(0px)
+                        opacity: 1
+                        pointer-events: all
+                    
+                
+    
+.nav
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    .tel
+        @include respond-to(screen-1140)
+            display: none !important
+        a
+            padding: 6px 18px
+            display: block
+            color: var(--white)
+
+.navDropdown
+    position: absolute
+    left: 0
+    right: 0
+    top: 100%
+    padding: 0px 0
+    transform: translateY(50px)
+    opacity: 0
+    pointer-events: none
+    transition: .5s ease
+   
+
+    .navDDWrap
+        background: var(--white)
+        padding: 35px 0
+        padding-right: 20px
+        .conatier-full
+            padding: 0 40px
+            margin: 0 auto
+        .img
+            &.overlay_after::after
+                height: 200px
+        h5
+            color: var(--black)
+            margin-bottom: 10px
+    .flex
+        align-items: unset
+        .colLeft
+            flex-grow: 1
+            flex: 1
+            width: 100%
+            padding-right: 20px
+        .colRight
+            flex: 0 1 35%
+            max-width: 35%
+            width: 100%
+            padding-left: 20px
+        .linkar
+            margin-top: 0px
+            padding-left: 20px
+            a
+                display: inline-block
+                color: var(--grey-dark)
+                padding: 6px 6px
+                transition: .5s ease
+                span,svg
+                    display: inline-block
+                span
+                    margin-right: 6px
+                &:hover
+                    color: var(--btnbg)
+    .navListInner
+        
+        .col
+            flex-grow: 1
+            flex: 1
+            padding: 5px
+            a
+                display: block
+                border: 1px solid transparent
+                border-radius: 5px
+                padding: 20px 0 8px
+                background: var(--white)
+                text-decoration: none
+                transition: .5s ease
+                .cardImg
+                    img
+                        max-width: 150px
+                        display: block
+                        margin: 0 0 10px
+                .cardText
+                    padding: 8px 20px
+                    h6
+                        display: block
+                        color: var(--black)
+                        font-size: var(--font-siz-17)
+                        margin-bottom: 5px
+                    p
+                        font-size: var(--font-siz-15)
+                        display: block
+                        color: var(--blacklight)
+                        display: -webkit-box
+                        -webkit-line-clamp: 2
+                        -webkit-box-orient: vertical
+                        overflow: hidden
+                        text-overflow: ellipsis 
+                &:hover
+                    // border-color: #e3e3e3
+                    box-shadow: 0px 0px 0.5rem rgba(0, 0, 0, 0.041)
+    .navDDWrap
+        .location
+            column-count: 3
+            .loc
+                padding: 5px 16px
+            
+
+               
+.btnhumburger
+    position: relative
+    width: 50px
+    text-align: center
+    cursor: pointer
+    @include respond-to(screen-991)
+        order: 3
+    span
+        display: block
+        color: var(--white)
+        font-size: var(--font-siz-12)
+        font-weight: var(--font-500)
+        text-transform: uppercase
+        letter-spacing: 1.5px
+        &.icon
+            display: block
+            border-left: 9px solid transparent
+            border-right: 9px solid transparent
+            border-bottom: 17px solid var(--white)
+            width: 18px
+            height: 16px
+            margin: 0 auto 4px
+
+// footer
+footer
+    background: linear-gradient(to right, #042e4f 45%, #0f416b 100%)
+    padding: 45px 0 30px
+    position: relative
+    @include respond-to(screen-767)
+        margin-bottom: 39.25px
+    @include respond-to(screen-520)
+        padding: 25px 0
+    &::after
+        content: ""
+        position: absolute
+        bottom: 0
+        right: 0
+        width: 336px
+        height: 257px
+        background: url('../../images/footer_lo.png')
+        background-repeat: no-repeat
+        background-position: right bottom
+    .footer-wrapper
+        position: relative
+        z-index: 1
+.footerTop
+    @include respond-to(screen-520)
+        border-bottom: 1px solid rgba(255,255,255,.1019607843)
+        padding-bottom: 20px
+    >.flex
+        @include respond-to(screen-520)
+            align-items: center
+        .logo-wrap
+            width: 145px
+            @include respond-to(screen-520)
+                width: 90px
+            a
+                display: block
+                svg
+                    display: block
+                    max-width: 130px
+                    width: 100%
+                    @include respond-to(screen-520)
+                        max-width: 80px
+                    path
+                        fill: var(--white)
+        .ftopAsright
+            flex-grow: 1
+            position: relative
+            &::after
+                content: ""
+                position: absolute
+                bottom: 21px
+                left: 0
+                right: 0
+                height: 1px
+                background: var(--white)
+                @include respond-to(screen-520)
+                    bottom: 8px
+                @include respond-to(screen-520)
+                    display: none
+            .flex
+                justify-content: flex-end
+                align-items: center
+                gap: 20px
+            a
+                display: inline-block
+                color: var(--white)
+                font-weight: var(--font-500)
+                &:first-child
+                    padding-right: 20px
+                    position: relative
+                    &:after
+                        content: ""
+                        position: absolute
+                        right: 0
+                        top: 3px
+                        bottom: 3px
+                        width: 2px
+                        background: var(--white)
+            .whats
+                background: linear-gradient(to right, var(--secondaryDark) 5%, var(--primaryDark) 60%)
+                background-repeat: no-repeat
+                background-position: -200px 0
+                transition: .5s ease
+                &:hover
+                    background-position: 0 0
+            .btn
+                display: inline-block
+                display: inline-block
+                padding: 6px 23px
+                border: 1px solid var(--white)
+                border-radius: 30px
+                color: var(--btnbg)
+                background: linear-gradient(to right, var(--white), var(--white))
+                background: var(--white)
+                background-position: -200px 0
+                background-repeat: no-repeat
+                transition: background .5s ease
+                &:hover
+                    color: var(--white)
+                    background: linear-gradient(to right, var(--secondaryDark) , var(--primaryDark) 60%)
+                    background-position: 0 0
+.footerBottom
+    padding: 35px 0
+    .colA
+        flex: 0 1 70%
+        max-width: 70%
+        width: 100%
+        @include respond-to(screen-860)
+            flex: 0 1 100%
+            max-width: 100%
+    .colB
+        flex: 0 1 30%
+        max-width: 30%
+        width: 100%
+        @include respond-to(screen-860)
+            flex: 0 1 100%
+            max-width: 100%
+            display: flex
+            flex-wrap: wrap
+    .col
+        flex: 0 1 25%
+        max-width: 25%
+        width: 100%
+        @include respond-to(screen-675)
+            padding-right: 15px
+        @include respond-to(screen-520)
+            flex: 0 1 50%
+            max-width: 50%
+            margin-bottom: 15px
+        
+    .title
+        color: var(--white)
+        font-size: var(--font-siz-18)
+        font-weight: var(--font-500)
+        margin-bottom: 15px
+
+.footerNav
+    ul
+        li
+            display: block
+            a      
+                color: var(--white)
+                display: inline-block
+                font-size: var(--font-siz-14)
+                opacity: .6
+                padding: 5px 0 
+                transition: .5s ease
+                @include respond-to(screen-520)
+                    padding: 2px 0 
+                &:hover
+                    opacity: 1  
+
+.social_links
+    text-align: right
+    @include respond-to(screen-860)
+        text-align: left
+        margin-top: 25px
+        flex-grow: 1
+        flex: 1
+    @include respond-to(screen-400)
+        flex: 0 1 100%
+        max-width: 100%
+
+    ul
+        text-align: left
+        display: inline-block
+        li
+            display: inline-block
+            a
+                display: block
+                width: 38px
+                height: 35px
+                @include respond-to(screen-991)
+                    width: 35px
+                svg
+                    width: 26px
+                    height: 26px
+                    color: var(--white)                    
+                    path
+                        fill: var(--white)
+
+.cliLogo
+    display: block
+    text-align: right
+    margin-top: 25px
+    @include respond-to(screen-860)
+        margin-top: 0
+        flex-grow: 1
+        flex: 1
+    @include respond-to(screen-400)
+        flex: 0 1 100%
+        max-width: 100%
+        margin-top: 15px
+    img
+        display: inline-block                        
+
+.ffoterCopy
+    border-top: 1px solid #ffffff1a
+    padding: 20px 0  0
+    @include respond-to(screen-520)
+        text-align: center
+.soNav    
+    position: absolute
+    right: 0
+    @include respond-to(screen-520)
+        position: static
+    a      
+        color: var(--white)
+        display: inline-block
+        font-size: var(--font-siz-14)
+        opacity: .6
+        padding: 5px 0 
+        font-weight: var(--font-normal)
+        transition: .5s ease
+        &:hover
+            opacity: 1  
+        &:first-child
+            margin-right: 35px
+
+.copyrig
+    p
+        color: var(--white)
+        display: inline-block
+        font-size: var(--font-siz-14)
+        span,img
+            display: inline-block
+            vertical-align: middle
+        span
+            opacity: .6
+            margin-right: 15px
+
+// Humburger
+.model.humbuger_navigation
+    position: fixed
+    top: 0
+    bottom: 0
+    right: 0
+    left: 0
+    transform: translateX(-100%)
+    z-index: 4
+    max-width: 420px
+    width: 100%
+    transition: .5s ease
+    .close
+        right: 20px
+        top: 8px
+        &::before
+            content: "Close"
+            margin-left: -51px
+            margin-right: 6px
+            font-size: var(--font-siz-16)
+        svg
+            color: var(--black)
+            path
+                fill: var(--black)
+    &.is-open
+        transform: translateX(0%)
+    .model-body
+        background-color: var(--white)
+        padding: 65px 0px
+        padding-bottom: 20px
+        padding-right: 0
+        margin-left: 0
+        height: 100%
+        position: relative
+        z-index: 11
+        &::after
+            content: ""
+            position: absolute
+            bottom: 0
+            right: 0
+            background: url('../../images/shapeB.png')
+            background-repeat: no-repeat
+            background-position: right bottom
+            transition: .5s ease
+            width: 285px
+            height: 203px
+            opacity: .4
+        @include respond-to(screen-767)
+            padding: 45px 0 25px
+    .close_model
+        img
+            width: 12px
+    .nav_link
+        li
+            display: block
+            a
+                display: block
+                color: var(--grey-dark)
+                padding: 6px 0px
+                font-size: 25px
+                font-weight: var(--font-600)
+                transition: .5s ease
+            &:hover
+                >a    
+                    color: var(--btnbg)
+                    padding-left: 5px
+    .contacLinks
+        margin-top: 25px
+    .contactLin
+        .links
+            display: flex
+            gap: 10px
+            p
+                position: relative
+                display: flex
+                align-items: flex-start
+                margin-bottom: 18px
+                svg,a
+                    display: inline-block
+                    vertical-align: middle
+                svg
+                    margin-top: 2px
+                img
+                    filter: invert(0.7) grayscale(1)
+                a
+                    padding-left: 12px
+                a
+                    display: inline-block
+                    vertical-align: middle
+                    color: var(--grey-dark)
+                    font-size: 14px
+                    &:hover
+                        color: var(--btnbg)
+                &.tel
+                    img
+                        margin-top: 7px
+                &:first-child
+                    a
+                        border-right: 1px solid #c9c9c9
+                        padding-right: 8px
+    
+    .social_links
+        display: inline-block
+        ul
+            li
+                display: inline-block
+                &:not(:last-child)
+                    margin-right: 4px
+                a
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    width: 33px
+                    height: 33px
+                    // border: 1px solid var(--grey-dark)
+                    border-radius: 3px
+                    padding: 0
+                    margin: 0
+                    transition: .5s ease
+                    svg
+                        width: 16px
+                        height: 16px
+                        path
+                            fill: var(--grey-dark)
+                &:hover
+                    a
+                        padding: 0
+                        border-color: var(--btnbg)
+                        background: var(--btnbg)
+                        svg
+                            path
+                                fill: var(--white)
+    .social_links,.Whts
+        display: inline-block
+        vertical-align: middle
+        margin-top:  15px
+                            
+                
+    .oter_pages
+        border-top: 1px solid #e5e5e5
+        border-bottom: 1px solid #e5e5e5
+        margin: 20px 0 25px
+        padding: 20px 0 25px
+        ul.nav_link
+            li
+                a
+                    font-size: 18px
+                    color: var(--grey-dark)
+                    padding: 5px 0
+                    transition: .5s ease
+                    font-weight: var(--font-normal)
+                    &:hover
+                        color: var(--btnbg)
+
+    // Dropdown
+    .nav_link
+        li.dropdown
+            position: relative
+            a
+                display: block
+            .sub-nav-trigger
+                position: absolute
+                right: -20px
+                top: 7px
+                height: 30px
+                width: 30px
+                display: flex
+                align-items: center
+                justify-content: center
+                cursor: pointer
+                background: var(--white)
+                transition: .5s ease
+                @include respond-to(screen-767)
+                    right: -2px
+                &::before,&::after
+                    content: ""
+                    position: absolute
+                    background: var(--grey-dark)
+                    opacity: 1
+                    transition: .5s ease
+                &::before
+                    width: 2px
+                    height: 12px
+                &::after
+                    width: 12px
+                    height: 2px
+                &:hover
+                    background: #f7f7f7
+            .sub-nav
+                display: none
+                background: #f7f7f7
+                padding: 10px 0
+                margin: 0 -50px 0 -50px
+                padding-left: 60px
+                li
+                    a
+                        font-size: 16px
+                        line-height: normal
+                        padding: 3px 0
+                        color: var(--grey-dark)
+                        font-weight: var(--font-normal)
+                        transition: .5s ease
+                        &:hover
+                            color: var(--btnbg)
+            &.active
+                >a
+                    color: var(--btnbg)
+                .sub-nav-trigger
+                    &::before
+                        opacity: 0
+    .model_scroll
+        height: 100%
+        overflow: hidden
+        overflow-y: scroll
+        padding: 10px 40px 15px
+        position: relative
+        padding-right: 51px
+        z-index: 1
+        @include respond-to(screen-767)
+            padding: 10px 20px 15px
+        &::-webkit-scrollbar
+            width: 3px
+        &::-webkit-scrollbar-track
+            box-shadow: unset    
+            background: transparent
+        &::-webkit-scrollbar-thumb 
+            background-color: var(--btnbg)
+    .shade
+        position: absolute
+        bottom: 0
+        right: 0
+        pointer-events: none    
+
+// Serarc Bar
+
+.searchbtn
+    position: relative
+    margin-right: 0
+    @include respond-to(screen-1140)
+        margin-right: 10px
+    @include respond-to(screen-991)
+        position: static
+        order: 2
+    &.active
+        @include respond-to(screen-992)
+            margin-right: 20px
+    .btn-search
+        background: transparent
+        border: 0
+        outline: none
+        cursor: pointer
+        display: flex
+        align-items: center
+        justify-content: center
+        position: relative
+        justify-content: center
+        z-index: 1
+        @include respond-to(screen-1140)
+            height: 45px
+            width: 45px
+        @include respond-to(screen-675)
+            height: 40px
+            width: 40px
+        svg,img
+            pointer-events: none
+            width: 23px
+            height: 23px
+            color: var(--white)
+        .close
+            display: none
+    .headerSearch
+        position: absolute
+        right: -10px
+        top: -10px
+        @include respond-to(screen-1140)
+            top: 0
+        @include respond-to(screen-991)
+            height: fit-content
+            top: 0
+            right: 0
+        @include respond-to(screen-767)
+            left: 0
+            top: 0
+            right: 0
+            padding-right: 0
+            background: var(--primaryDark)
+        .form
+            @include respond-to(screen-767)
+                padding: 5px 0
+                padding-right: 75px
+                background: var(--primaryDark)
+            .form-group
+                margin: 0 0 7px
+                @include respond-to(screen-767)
+                    margin: 0 0 6px
+                    padding: 0 10px
+                .form-control
+                    width: 300px
+                    margin-left: auto
+                    display: inherit
+                    margin-right: 0
+                    padding: 0
+                    border-radius: 0
+                    color: var(--white)
+                    @include respond-to(screen-991)
+                        width: 320px
+                    @include respond-to(screen-767)
+                        width: 100%
+                        height: 46px
+                    &::placeholder
+                        color: var(--white)
+        .searchWrapper
+            text-indent: initial
+            .modelSearchody
+                .searchResult
+                    border: 1px solid var(--grey-light)
+                    width: 500px
+                    max-width: 500px
+                    background: var(--white)
+                    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px
+                    background: var(--white)
+                    margin-top: 24px
+                    padding: 10px
+                    border-radius: 15px
+                    @include respond-to(screen-767)
+                        border-radius: 0
+                        width: 100%
+                        margin: 0
+                        background: #fff
+                .SearchResulList
+                    max-height: 435px
+                    overflow-y: scroll
+                    &::-webkit-scrollbar
+                        width: 5px
+                    &::-webkit-scrollbar-track
+                        box-shadow: unset    
+                        background-color: var(--grey-light)
+                    &::-webkit-scrollbar-thumb 
+                        background-color: var(--primaryDark)
+                    @include respond-to(screen-991)
+                        max-width: 100%
+                        width: 100%
+                        
+                .item
+                    display: block
+                    margin-bottom: 10px
+                    
+    &.active
+        .btn-search
+            .open
+                display: none
+            .close
+                display: block
+
+
+.searchResult
+    position: relative
+    &:after
+        content: ""
+        position: absolute
+        display: block
+        border-left: 9px solid rgba(0,0,0,0)
+        border-right: 9px solid rgba(0,0,0,0)
+        border-bottom: 11px solid var(--white)
+        width: 16px
+        height: 16px
+        margin: 0 auto 4px
+        top: -17px
+        right: 10%
+        transition: all .5s ease
+        @include respond-to(screen-767)
+            display: none
+    .SearchResulList
+
+        .list
+            background: var(--white)
+            a
+                border-bottom: 1px solid #f1f1f1
+                padding: 8px
+                .imgSearc
+                    width: 80px
+                    height: 60px
+                    img
+                        width: 100%
+                        height: 100%
+                        object-fit: cover
+                        padding-right: 10px
+                .textSearc
+                    flex-grow: 1
+                    flex: 1
+                    padding-left: 10px
+                    .searcrestit
+                        font-size: var(--font-siz-16)
+                        font-weight: var(--font-500)
+                        color: var(--black)
+                    .searcresdec
+                        font-size: var(--font-siz-14)
+                        font-weight: var(--font-normal)
+                        color: var(--grey-dark)
+
+.no-header
+    header
+        &::before
+            height: 100%                        

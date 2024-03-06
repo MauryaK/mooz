@@ -1,0 +1,28 @@
+@charset "UTF-8"
+@import '../_var'
+.office-Main
+    background: var(--white)
+    padding: 82px 0 0
+    @include respond-to(screen-767)
+        padding: 70px 0 0
+.office-Healine
+    padding: 78px 0
+    position: relative
+    @include respond-to(screen-767)
+        padding: 30px 0
+    .shapeA
+        position: absolute
+        right: 0
+        top: 20px
+        @include respond-to(screen-520)
+            display: none
+        
+    .heading
+        max-width: 520px
+        @include respond-to(screen-520)
+            text-align: center
+    h1
+        color: var(--black)
+    p
+        font-size: var(--font-siz-18)
+        font-weight: var(--font-500)        

@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'Brother';
+    src: url('Brother1816-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Brother';
+    src: url('Brother1816-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Brother';
+    src: url('Brother1816-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Silver South Script';
+    src: url('SilverSouthScript.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fragor - Demo Version';
+    src: url('Fragor-DemoVersion-Regular.woff2') format('woff2'),
+        url('Fragor-DemoVersion-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

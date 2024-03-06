@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Form Validation</title>
+    <link rel="icon" href="assets/icons/favicon.png" />
+    <style>
+        *,*:before,*::after{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        h2{
+            margin-bottom: 25px;
+        }
+        .error {
+            color: red;
+        }
+        .form{
+            max-width: 420px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        body,input,button,select{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 16px;
+            line-height: 1.4;
+            color: #666;
+        }
+        .input{
+            display: block;
+            width: 100%;
+            padding: 15px;
+            border: 0;
+            border: 1px solid #666;
+            outline: none;
+            box-shadow: none;
+            background: #fff;
+            font-weight: normal;
+            transition: .5s ease;
+        }
+        .ree{
+            position: relative;
+            margin-bottom: 12px;
+        }
+        .error{
+            position: absolute;
+            right: 8px;
+            top: -5px;
+            font-size: 10px;
+            padding: 2px 6px;
+            background: rgb(248, 228, 228);
+            border: 1px solid rgb(248, 180, 180);
+            border-radius: 5px;
+        }
+        .error:empty{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <form class="form" aria-autocomplete="none" autocomplete="off" id="myForm" onsubmit="return validateForm()">
+        <h2>Advanced Form Validation</h2>
+        <div class="ree">
+            <label for="name">Name:</label>
+            <input class="input" type="text" id="name" name="name">
+            <span id="nameError" class="error"></span>
+        </div>
+        <div class="ree">
+            <label for="email">Email:</label>
+            <input class="input" type="text" id="email" name="email">
+            <span id="emailError" class="error"></span>
+        </div>
+        <div class="ree">
+            <label for="phone">Phone Number:</label>
+            <input class="input" type="text" id="phone" maxlength="10" name="phone" onkeypress="return numeralsOnly(event)">
+            <span id="phoneError" class="error"></span>
+        </div>
+        <div class="ree">
+            <label for="mobile">Mobile Number:</label>
+            <input class="input" type="text" id="mobile" maxlength="10" name="mobile" onkeypress="return numeralsOnly(event)">
+            <span id="mobileError" class="error"></span>
+        </div>
+        <div class="ree">
+            <label for="country">Select Country:</label>
+            <select class="input" id="country" name="country">
+                <option value="">Select</option>
+                <option value="usa">USA</option>
+                <option value="canada">Canada</option>
+                <option value="uk">UK</option>
+            </select>
+            <span id="countryError" class="error"></span>
+        </div>
+        <div class="ree">
+            <label for="file">File Upload:</label>
+            <input class="input" type="file" id="file" name="file" accept=".pdf, .doc, .docx">
+            <span id="fileError" class="error"></span>
+        </div>
+        <div class="ree">
+            <label for="message">Message:</label>
+            <textarea class="input" id="message" name="message"></textarea>
+            <span id="messageError" class="error"></span>
+        </div>
+        <div class="ree"><input type="submit" value="Submit"></div>
+    </form>
+    <div class="userDat"></div>
+    <script>
+        function validateForm() {
+            var isValid = true;
+            isValid = validateField('name', 'nameError', 'Name is required') && isValid;
+            isValid = validateEmail('email', 'emailError') && isValid;
+            isValid = validatePhone('phone', 'phoneError') && isValid;
+            isValid = validateMobile('mobile', 'mobileError') && isValid;
+            isValid = validateSelect('country', 'countryError', 'Please select a country') && isValid;
+            isValid = validateFile('file', 'fileError', 'Invalid file type. Please upload a PDF or DOC file') && isValid;
+            isValid = validateField('message', 'messageError', 'Message is required') && isValid;
+            FormGetData()
+            return isValid;
+        }
+
+        function validateField(fieldName, errorId, errorMessage) {
+            var elm = document.getElementById(fieldName);
+            var errorElement = document.getElementById(errorId);
+
+            if (elm.value.trim() === "") {
+                errorElement.innerHTML = errorMessage;
+                elm.classList.add("err")
+                return false;
+            } else {
+                errorElement.innerHTML = "";
+                elm.classList.remove("err")
+                return true;
+            }
+        }
+
+        function validateEmail(fieldName, errorId) {
+            var elm = document.getElementById(fieldName);
+            var email = elm.value;
+            var errorElement = document.getElementById(errorId);
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailRegex.test(email)) {
+                errorElement.innerHTML = "Invalid email format";
+                elm.classList.add("err")
+                return false;
+            } else {
+                errorElement.innerHTML = "";
+                elm.classList.remove("err")
+                return true;
+            }
+        }
+
+        function validatePhone(fieldName, errorId) {
+            var elm = document.getElementById(fieldName);
+            var phone = elm.value;
+            var errorElement = document.getElementById(errorId);
+            var phoneRegex = /^\d{10}$/;
+
+            if (!phoneRegex.test(phone)) {
+                errorElement.innerHTML = "Invalid phone number";
+                elm.classList.add("err")
+                return false;
+            } else {
+                errorElement.innerHTML = "";
+                elm.classList.remove("err")
+                return true;
+            }
+        }
+
+        function validateMobile(fieldName, errorId) {
+            var elm = document.getElementById(fieldName);
+            var mobile = elm.value;
+            var errorElement = document.getElementById(errorId);
+            var mobileRegex = /^\d{10}$/;
+
+            if (!mobileRegex.test(mobile)) {
+                errorElement.innerHTML = "Invalid mobile number";
+                elm.classList.add("err")
+                return false;
+            } else {
+                errorElement.innerHTML = "";
+                elm.classList.remove("err")
+                return true;
+            }
+        }
+
+        function validateSelect(fieldName, errorId, errorMessage) {
+            var elm = document.getElementById(fieldName);
+            var value = elm.value;
+            var errorElement = document.getElementById(errorId);
+
+            if (value === "") {
+                errorElement.innerHTML = errorMessage;
+                elm.classList.add("err")
+                return false;
+            } else {
+                errorElement.innerHTML = "";
+                elm.classList.remove("err")
+                return true;
+            }
+        }
+
+        function validateFile(fieldName, errorId, errorMessage) {
+            var fileInput = document.getElementById(fieldName);
+            var errorElement = document.getElementById(errorId);
+
+            if (fileInput.files.length === 0) {
+                errorElement.innerHTML = "Please upload a file";
+                fileInput.classList.add('err')
+                return false;
+            } else {
+                var allowedFileTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+                var fileType = fileInput.files[0].type;
+
+                if (allowedFileTypes.indexOf(fileType) === -1) {
+                    fileInput.value = "";
+                    errorElement.innerHTML = errorMessage;
+                    fileInput.classList.add('err')
+                    return false;
+                } else {
+                    errorElement.innerHTML = "";
+                    fileInput.classList.remove('err')
+                    return true;
+                }
+            }
+        }
+
+        const input = document.querySelectorAll('.input');
+        input.forEach(function(e,i){
+            input[i].addEventListener('keyup', function(){
+                validateForm()
+            })
+            input[i].addEventListener('change', function(){
+                validateForm()
+            })
+        })
+        function numeralsOnly(evt) {
+            evt = (evt) ? evt : event;
+            var charCode = (evt.charCode) ? evt.charCode : ((evt.keyCode) ? evt.keyCode : ((evt.which) ? evt.which : 0));
+            if (charCode > 31 && (charCode < 48 || charCode > 57) && (charCode != 46)) {
+                return false;
+            }
+            return true;
+        }
+    
+        function FormGetData(){
+            const userDat = document.querySelector(".userDat");
+            const formData = decodeURI(window.location.search).replace("?", "");
+            const data = formData.split("&");
+
+            const template = data.map(item => {
+                const [key, value] = item.split("=");
+                const decodedValue = value.replaceAll("+", " ").replaceAll("%2C", ",").replaceAll('%40', "@");
+                return `<div class="list"><p>${key}: ${decodedValue}</p></div>`;
+            }).join('');
+
+            userDat.innerHTML = `<div class="data">${template}</div>`;
+                    }
+        FormGetData()
+    </script>
+</body>
+</html>

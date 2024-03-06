@@ -1,0 +1,1148 @@
+@charset "UTF-8"
+@import './_var'
+:root
+    --primaryDark: #10426d
+    --secondaryDark: #1868ac
+    --btnbg: #053052
+    --white: #fff
+    --black: #000
+    --blacklight: #404040
+    --grey-light: #efefef
+    --grey: #aab3be
+    --grey-dark: #666
+    --h1: 48px
+
+    --h2: 36px
+    --h3: 30px
+    --h4: 24px
+    --h5: 20px
+    --h6: 18px
+    --font-siz-11: 11px
+    --font-siz-12: 12px
+    --font-siz-13: 13px
+    --font-siz-14: 14px
+    --font-siz-15: 15px
+    --font-siz-16: 16px
+    --font-siz-17: 17px
+    --font-siz-18: 18px
+    --font-siz-20: 20px
+    --font-siz-21: 21px
+    --font-siz-22: 22px
+    --font-siz-23: 23px
+    --font-siz-24: 24px
+    --font-siz-25: 25px
+    --font-siz-26: 26px
+    --font-siz-27: 27px
+    --font-siz-28: 28px
+    --font-siz-29: 29px
+    --font-siz-30: 30px
+    --font-siz-31: 31px
+    --font-siz-32: 32px
+    --font-siz-33: 33px
+    --font-siz-34: 34px
+    --font-siz-35: 35px
+    --font-siz-36: 36px
+    --font-siz-37: 37px
+    --font-siz-38: 38px
+    --font-siz-39: 39px
+    --font-siz-40: 40px
+    --font-siz-41: 41px
+    --font-siz-42: 42px
+    --font-siz-43: 43px
+    --font-siz-44: 44px
+    --font-siz-45: 45px
+    --font-siz-46: 46px
+    --font-siz-47: 47px
+    --font-siz-48: 48px
+
+    --fragor: "Fragor - Demo Version"
+    --silver: "Silver South Script"
+    --brother: Brother,sans-serif
+    --font-normal: 400
+    --font-500: 500
+    --font-600: bold
+    @include respond-to(screen-991)
+        --h1: 40px
+        --h2: 30px
+        --h3: 26px
+        --h4: 21px
+    @include respond-to(screen-520)
+        --h1: 35px
+    @include respond-to(screen-400)
+        --h1: 30px
+        --h2: 25px
+        --h3: 20px
+        --h4: 18px
+
+*,
+*::before,
+*::after
+    padding: 0
+    margin: 0
+    list-style: none
+    box-sizing: border-box
+body,html
+    min-height: 100%
+    font-family: var(--brother)
+    font-weight: var(--font-normal)
+    color: var(--grey-dark)
+    font-size: var(--font-siz-16)
+    line-height: 1.4
+    @include respond-to(screen-991)
+        font-size: var(--font-siz-15)
+    &::-webkit-scrollbar
+        width: 5px
+    &::-webkit-scrollbar-track
+        box-shadow: unset
+        background: var(--white)
+    &::-webkit-scrollbar-thumb
+        background-color: var(--secondaryDark)
+a[href]
+    text-decoration: none    
+img,svg
+    vertical-align: middle
+img
+    max-width: 100%
+img.full
+    width: 100%
+.container
+    max-width: 1300px
+    padding: 0 15px
+    width: 100%
+    margin: 0 auto    
+.container-full
+    width: 100%
+    padding: 0 40px
+    margin: 0 auto    
+    @include respond-to(screen-991)
+        padding: 0 15px
+h1,h2,h3,h4,h5,h6
+    margin: 0
+    @include respond-to(screen-400)
+        line-height: 1.4
+h1
+    font-size: var(--h1)
+h2
+    font-size: var(--h2)
+h3
+    font-size: var(--h3)
+h4
+    font-size: var(--h4)
+h5
+    font-size: var(--h5)
+h6
+    font-size: var(--h6)
+input,select,button,textarea
+    font-family: var(--font-Gravity)
+    font-size: var(--font-siz-16)
+    line-height: var(--font-siz-24)
+button, input[type="button"],input[type="submit"]
+    cursor: pointer
+    border: 0
+    outline: none
+
+.silver
+    font-family: var(--silver)
+    font-weight: normal
+.fragor
+    font-family: var(--fragor)
+    font-weight: normal
+    font-size: 48px
+    @include respond-to(screen-675)
+        font-size: 30px
+.flex
+    display: flex
+    flex-wrap: wrap    
+.relative
+    position: relative
+.md-hidden
+    @include respond-to(screen-991)
+        display: none !important        
+.sm-hidden
+    @include respond-to(screen-767)
+        display: none !important        
+.ls-hidden
+    @include respond-to(screen-992)
+        display: none !important        
+.hidden
+    display: none
+.col-1
+    flex: 0 1 100%
+    max-width: 100%
+    width: 100%
+    padding: 0 8px
+.col-2
+    flex: 0 1 50%
+    max-width: 50%
+    width: 100%
+    padding: 0 8px
+    @include respond-to(screen-520)
+        flex: 0 1 100%
+        max-width: 100%
+        padding: 0
+
+.col-3
+    flex: 0 1 33.33%
+    max-width: 33.33%
+    width: 100%
+    padding: 0 8px
+.col-4
+    flex: 0 1 25%
+    max-width: 25%
+    width: 100%
+    padding: 0 8px
+.col-5
+    flex: 0 1 20%
+    max-width: 20%
+    width: 100%
+    padding: 0 8px
+.overlay_before     
+    &::before
+        content: ""
+        position: absolute
+        left: 0
+        right: 0
+        top: 0
+        height: 350px
+        background: linear-gradient(to bottom, #000000e0, transparent)       
+.overlay_after   
+    &::after
+        content: ""
+        position: absolute
+        left: 0
+        right: 0
+        bottom: 0
+        height: 500px
+        background: linear-gradient(to top, rgb(0 0 0 / 82%), transparent)    
+.customDropDown
+    .wrapper
+        .selectedBox
+            width: 100%
+            display: block
+            border-bottom: 1px solid var(--grey-dark)
+            padding: 5px 0 10px 0px
+            cursor: pointer
+            text-transform: capitalize
+            transition: .5s ease
+            p
+                color: var(--blacklight)
+                font-weight: var(--font-500)
+            .label
+                color: var(--blacklight)
+                font-weight: var(--font-500)
+                top: -12px
+                position: absolute
+                opacity: 0
+                transition: .5s ease
+                font-size: var(--font-siz-11)
+            &.active
+                .label
+                    opacity: .5
+    .listDropDown
+        position: absolute
+        left: 0
+        right: 0
+        top: 100%
+        background: var(--white)
+        padding: 8px 0 0
+        max-height: 200px
+        overflow-y: scroll
+        box-shadow: 0 10px 16px 1px #00000030
+        z-index: 2
+        &::-webkit-scrollbar
+            width: 5px
+        &::-webkit-scrollbar-track
+            box-shadow: unset
+            background: var(--white)
+        &::-webkit-scrollbar-thumb
+            background-color: var(--secondaryDark)
+        .list
+            .button
+                display: block
+                cursor: pointer
+                padding: 8px 15px
+                background: var(--white)
+                transition: .5s ease
+                position: relative
+                text-transform: capitalize
+                &::before
+                    content: ""
+                    position: absolute
+                    left: 15px
+                    width: 15px
+                    height: 15px
+                    background: url(../../icons/tik.png)
+                    top: 11px
+                    opacity: 0
+                    background-repeat: no-repeat
+                    background-position: center
+                    transition: .5s ease
+                &:hover
+                    background: var(--grey-light)
+                &.selected
+                    padding-left: 38px
+                    background: linear-gradient(to right, var(--secondaryDark) 5%, var(--primaryDark) 60%)
+                    color: var(--white)
+                    &::before
+                        opacity: 1
+.servIcon
+    &::before
+        content: ""
+        background: url(../../icons/servIcon.png)
+        position: absolute
+        right: 0
+        top: 0
+        bottom: 9px
+        width: 25px
+        background-repeat: no-repeat
+        background-position: center
+.btn-form
+    .btn
+        width: 100%
+        text-align: center
+        padding: 8.5px 22px
+        display: block
+        color: var(--white)
+        border-radius: 100px
+        overflow: hidden
+        position: relative
+        background: linear-gradient(to right, var(--primaryDark) 5%, var(--secondaryDark) 50%)
+        span
+            position: relative
+            display: block
+            z-index: 11
+        .transiton_layer
+            position: absolute
+            top: 0
+            left: 0
+            height: 100%
+            width: 100%
+            pointer-events: none
+            z-index: 1
+            div
+                position: absolute
+                background: linear-gradient(to right, var(--primaryDark) 5%, var(--secondaryDark) 50%)
+                height: 100%
+                left: 0
+                top: 0
+                opacity: 01
+                width: 100%
+                transition: transform 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+                transform-origin: bottom right
+                transform: scaleX(0)
+        &:hover 
+            .transiton_layer
+                transform: scale(-1)
+                div
+                    transform: scale(1)
+                    transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955)
+                    transition-delay: 0s
+                    transition-duration: 500ms
+
+.bookBtn
+    margin-right: 23px
+    .btn
+        padding: 6px 18px
+        display: block
+        color: var(--white)
+        border: 1px solid transparent
+        background: linear-gradient(to right, var(--secondaryDark) 5%, var(--primaryDark)60%)
+        border-radius: 100px 
+        transition: .5s ease
+        @include respond-to(screen-520)
+            padding: 4px 18px
+            font-size: var(--font-siz-15)
+        &:hover
+            // background: var(--white)
+            // color: var(--btnbg)
+            background-position: 125px 0
+            color: var(--white)
+            border-color: var(--white)
+.img_hover
+    .img
+        overflow: hidden
+        >img
+            transition: 1s ease
+            transform: scale(1)
+    &:hover
+        .img 
+            img
+                transform: scale(1.1)
+        
+.linkArrAt
+    a
+        color: var(--white)
+        border-bottom: 1px solid var(--white)
+        display: flex
+        width: 165px
+        justify-content: space-between
+        align-items: center
+        padding: 15px 0
+        transition: .5s ease
+        span,img
+            display: inline-block
+            vertical-align: middle
+        span
+            margin-right: 7px
+        &:hover
+            width: 200px
+            span
+                margin-right: 15px
+            
+.text-center
+    text-align: center      
+.headingIn
+    h2
+        color: var(--black)    
+        line-height: 35px 
+        span
+            font-size: inherit     
+.owl-stage
+    margin: 0 auto
+.slideStyleA
+    .owl-stage
+        margin: 0 auto
+    .item
+        position: relative
+        .img
+            position: relative
+            img
+                width: 100%
+    .slideContent
+        position: absolute
+        bottom: 0
+        left: 0
+        right: 0
+        z-index: 1
+        padding-right: 0
+        @include respond-to(screen-860)
+            bottom: 20px
+        .contentBox
+            padding: 0
+            padding-right: 30px
+            background: transparent
+            transition: .5s ease
+        .icon
+            position: absolute
+            top: 24px
+            right: 34px
+            opacity: 0
+            transition: .5s ease
+            img
+                max-width: 55px
+        h4
+            color: var(--white)
+            margin-bottom: 8px
+            text-align: center
+            transition: .5s ease
+        p
+            color: #9cb0c0
+            margin-bottom: 24px
+            display: none
+            max-width: 346px
+            -webkit-line-clamp: 2
+            -webkit-box-orient: vertical
+            overflow: hidden
+            text-overflow: ellipsis 
+        h4
+            font-weight: var(--font-500)
+            
+        .act
+            opacity: 0
+            transition: .5s ease
+            @include respond-to(screen-860)
+                display: none
+            .linkA,.linkB
+                display: inline-block
+                font-weight: var(--font-600)
+                padding: 5px 0
+                transition: .5s ease
+        .linkA
+            color: var(--white)
+            margin-right: 40px
+            cursor: pointer
+            &:hover
+                color: #abc0d2
+        .linkB
+            color: #abc0d2
+            &:hover
+                color: var(--white)
+    .item:hover
+        .slideContent
+            @include respond-to(screen-992)
+                padding-right: 42px
+                .contentBox
+                    display: block
+                    padding: 30px
+                    background: linear-gradient(to right, #042d4f, #10426c)
+                    border-top-right-radius: 35px
+                    padding-right: 100px
+                    .icon
+                        opacity: 1
+                    h4
+                        text-align: left
+                    p
+                        display: -webkit-box
+                    .act
+                        opacity: 1
+            
+                         
+.videoIcon
+    position: absolute
+    width: 60px
+    height: 60px
+    background: var(--white)
+    border-radius: 60px
+    border: 1px solid var(--white)
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    border-radius: 100px
+    cursor: pointer
+    @include respond-to(screen-767)
+        width: 47px
+        height: 47px
+    &:before
+        width: 55px
+        height: 55px
+        top: 50%
+        right: 0
+        bottom: 0
+        left: 50%
+        position: absolute
+        content: ""
+        transform: translateX(-50%) translateY(-50%)
+        background: var(--white)
+        border-radius: 50%
+        display: block
+        animation: pulse-border 1500ms ease-out infinite
+        @include respond-to(screen-767)
+            width: 47px
+            height: 47px
+    img
+        width: auto
+        position: relative
+        @include respond-to(screen-767)
+            width: 10px
+
+    
++keyframes(pulse-border) 
+    0%
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1)
+        opacity: 0.5
+    100%
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5)
+        opacity: 0
+
+.link
+    a
+        display: inline-block
+        padding: 5px 8px
+        span,img
+            display: inline-block
+            color: var(--white)
+        img
+            margin-left: 8px
+            transition: .5s ease
+        &:hover
+            img
+                margin-left: 12px
+
+            
+.navCenter
+    .owl-nav
+        position: static
+        button
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            width: 49px
+            height: 49px
+            background: var(--white) !important
+            border-radius: 50px
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            &.owl-prev
+                left: 35px
+            &.owl-next    
+                right: 35px    
+            &.disabled
+                display: none   
+
+.navTop
+    .owl-nav
+        position: absolute
+        top: -110px
+        right: 0
+        width: 112px
+        gap: 12px
+        display: flex
+        button
+            width: 49px
+            height: 49px
+            background: var(--white) !important
+            border-radius: 50px
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            border: 1px solid var(--primaryDark) !important
+            transition: .5s ease
+            &.owl-prev
+                left: 35px
+            &.owl-next    
+                right: 35px 
+            &:hover
+                background: linear-gradient(to right, var(--secondaryDark) 5%, var(--primaryDark)60%) !important
+                img
+                    filter: grayscale(1) invert(1) brightness(11)
+
+
+.catToActbtn
+    display: inline-block
+    padding: 8px 0 14px
+    border-bottom: 1px solid var(--white)
+    cursor: pointer
+    span,img
+        display: inline-block
+        vertical-align: middle
+        color: var(--white)
+    span
+        margin-right: 60px
+
+.imghover
+    img
+        transform: scale(1)        
+        transition: .5s ease
+    &:hover
+        img
+            transform: scale(1.1)        
+.checkbox-group
+    label
+        display: flex
+        margin-right: 25px
+        align-items: center
+        gap: 12px
+        color: var(--white)
+        cursor: pointer
+        pointer-events: all
+        @include respond-to(screen-520)
+            margin-right: 15px
+            margin-bottom: 10px
+    .fakeRadio
+        width: 18px
+        height: 18px
+        border: 1px solid var(--white)
+        border-radius: 18px
+        position: relative
+        opacity: .5
+        transition: .5s ease
+        &::before
+            content: ""
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+            width: 5px
+            height: 5px
+            background: var(--white)
+            border-radius: 10px
+            opacity: 0
+            transition: .5s ease
+    .fakeCheckbox
+        position: absolute
+        left: 0
+        width: 25px
+        top: -2px
+        height: 25px
+        border: 1px solid var(--btnbg)
+        background: #f9f9f9
+        display: flex
+        align-items: center
+        justify-content: center
+        img
+            opacity: 0
+        + p
+            padding-left: 40px
+    
+    label
+        input[type="radio"],input[type="checkbox"]
+            display: none
+        input[type="radio"]:checked
+                + .fakeRadio
+                    opacity: 1
+                    &::before
+                        opacity: 1
+        input[type="checkbox"]:checked
+                + .fakeCheckbox
+                    background: var(--btnbg)
+                    img
+                        opacity: 1
+    &.tc
+        margin-top: 8px
+
+.form
+    .form-group 
+        margin-bottom: 25px
+        position: relative
+        .form-control
+            display: block
+            width: 100%
+            padding: 5px 0 10px 0px
+            height: 45px
+            border: 0
+            border-bottom: 1px solid var(--white)
+            outline: none
+            box-shadow: none
+            font-size: var(--font-siz-14)
+            background: transparent
+            font-weight: var(--font-normal)
+            color: var(--white)
+            transition: .5s ease
+            &:hover,&:focus
+                border-bottom-color: var(--white)
+            &:focus ~
+                label
+                    font-size: var(--font-siz-11)
+                    top: -5px
+        &.valid
+            label
+                font-size: var(--font-siz-11)
+                top: -5px
+
+        label
+            color: #9bacba
+            position: absolute
+            top: 6px
+            left: 0
+            z-index: 2
+            font-size: var(--font-siz-14)
+            pointer-events: none
+            font-weight: var(--font-normal)
+            transition: .5s ease
+    .btn-form
+        margin-top: 20px
+        // .btn
+        //     display: inline-block
+        //     padding: 8px 40px
+        //     width: 218px
+        //     font-size: var(--font-siz-18)
+        //     font-weight: var(--font-600)
+        //     border-radius: 35px
+        //     color: var(--btnbg)
+        //     background: var(--white)    
+        //     border: 1px solid var(--white)       
+        //     transition: .5s ease
+        //     @include respond-to(screen-520) 
+        //         display: block
+        //         width: 100%
+        //         padding: 10px 40px
+        //     &:hover
+        //         background: var(--btnbg)
+        //         color: var(--white)
+        
+.owl-carousel 
+    .owl-dots 
+        text-align: center
+        margin-top: 25px
+        button.owl-dot
+            display: inline-block
+            margin: 0 6px
+            cursor: pointer
+            width: 10px
+            height: 10px
+            border-radius: 12px
+            background: #c9c9c9
+            transition: .5s ease
+            &.active
+                width: 28px
+                background: var(--btnbg)
+            &:hover
+                background: var(--btnbg)
+       
+
+.Model_Video
+    position: fixed
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    width: 100%
+    z-index: 3
+    background: var(--black)
+    transform: translateY(100%)
+    transition: .5s ease
+    &.is-open
+        transform: translateY(0%)
+        .modelBody
+            iframe
+                display: block
+    
+    .modelBody
+        height: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+        iframe
+            width: 90%
+            height: 85%
+            border: 0
+            display: none
+            @include respond-to(screen-767)
+                width: 100%
+                height: 200px
+                border: 0
+                object-fit: cover        
+
+.model
+    .close
+        position: absolute
+        right: 15px
+        top: 15px
+        cursor: pointer
+        display: flex
+        align-items: center
+        justify-content: center
+        z-index: 2
+        img,svg
+            color: var(--white)       
+            path
+                fill: var(--white)
+.mob_strip
+    position: fixed
+    bottom: 0
+    left: 0
+    right: 0
+    background: linear-gradient(to right, var(--primaryDark) 5%, var(--secondaryDark) 50%)
+    z-index: 2
+    display: none
+    transform: translateY(40px)
+    transition: .5s ease
+    @include respond-to(screen-767)
+        display: block
+    ul
+        display: flex
+        li
+            flex:  0 1 33.33%
+            max-width: 33.33%
+            width: 100%
+            &:nth-child(2)
+                border-left: 1px solid #cccccc29
+                border-right: 1px solid #cccccc29
+            a
+                color: var(--white)
+                display: block
+                text-align: center
+                padding: 10px 0        
+                font-size: 14px   
+header.header-fixed ~ .mob_strip 
+    transform: translateY(0)                  
+
+.Model_Enquiry
+    position: fixed
+    top: 0
+    bottom: 0
+    left: auto
+    right: 0
+    max-width: 500px
+    background: var(--white)
+    width: 100%
+    z-index: 3
+    transform: translateX(100%)
+    transition: .5s ease
+    &::after
+        content: ""
+        position: absolute
+        bottom: 0
+        right: 0
+        background: url('../../images/shapeB.png')
+        background-repeat: no-repeat
+        background-position: right bottom
+        transition: .5s ease
+        width: 285px
+        height: 203px
+        opacity: .4
+    &.is-open
+        transform: translateX(0%)
+        .modelBody
+            iframe
+                display: block
+    .form-Enquery
+        position: relative
+        z-index: 1
+    .modelBody
+        padding: 20px 40px
+        height: 100vh
+        @include respond-to(screen-520)
+            padding: 15px
+            overflow-y: scroll 
+            &::-webkit-scrollbar
+                width: 5px
+            &::-webkit-scrollbar-track
+                box-shadow: unset
+                background: var(--white)
+            &::-webkit-scrollbar-thumb
+                background-color: var(--secondaryDark)
+        h2
+            color: var(--black)
+            margin-bottom: 30px
+            @include respond-to(screen-520)
+                margin-bottom: 20px
+    .close
+        svg
+            color: var(--black)
+    .form
+        .customDropDown
+            margin-bottom: 20px
+            .listDropDown
+                z-index: 3
+        .form-group
+            margin-bottom: 20px
+            .form-control
+                width: 100%
+                display: block
+                border-bottom: 1px solid var(--grey-dark)
+                padding: 5px 0 10px 0px
+                cursor: pointer
+                text-transform: capitalize
+                color: var(--blacklight)
+                transition: .5s ease
+                font-size: var(--font-siz-16)
+                font-weight: var(--font-500)
+                &.active
+                    .label
+                        opacity: .5
+            label
+                color: var(--blacklight)
+                font-weight: var(--font-500)
+                font-size: var(--font-siz-16)
+            &.valid
+                label
+                    font-size: var(--font-siz-11)
+                    opacity: .5
+                    top: -7px
+
+        .checkbox-group 
+            margin-bottom: 30px
+            @include respond-to(screen-520)
+                margin-bottom: 20px
+            &.tc
+                margin: 20px 0 35px
+                @include respond-to(screen-520)
+                    margin: 5px 0 20px
+            p
+                color: var(--blacklight)
+                font-size: var(--font-siz-15)
+            .fakeRadio
+                border: 1px solid var(--grey-dark)
+                opacity: 1
+                &::before
+                    background: var(--btnbg)
+            label
+                gap: 6px
+                margin-right: 10px
+                input[type="radio"]:checked
+                        + .fakeRadio
+                            opacity: 1
+                            border-color: var(--btnbg)
+                            &::before
+                                opacity: 1
+        .btn-form
+            margin-top: 0
+            // .btn
+            //     width: 100%
+            //     text-align: center
+            //     background: linear-gradient(to right, var(--primaryDark) 5%, var(--secondaryDark) 50%)
+            //     color: var(--white)
+            //     border: 1px solid transparent
+            //     padding: 12px 0
+            //     &:hover
+            //         border-color: var(--btnbg)       
+            //         color: var(--btnbg)
+            //         background: var(--white) 
+
+
+
+.overlay
+    position: fixed
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+    background: var(--black)
+    opacity: 0
+    pointer-events: none
+    transition: 1s ease  
+    z-index: 2
+    &.open
+        pointer-events: all
+        opacity: .5                 
+body.open
+    .overlay
+        pointer-events: all
+        opacity: .5     
+div#back-to-top
+    position: fixed
+    left: auto
+    right: -100px
+    width: 50px
+    height: 50px
+    display: flex
+    align-items: center
+    justify-content: center
+    border-radius: 55px
+    z-index: 1
+    bottom: 10%
+    background: var(--primaryDark)
+    padding: 10px
+    cursor: pointer
+    transition: 700ms ease
+    @include respond-to(screen-675)
+        width: 45px
+        height: 45px
+        bottom: 50px
+    &.show
+        right: 10px
+    svg
+        color: var(--white)
+        max-width: 18px    
+        path        
+            fill: var(--white)
+
+.whats
+    display: inline-block
+    padding: 6px 23px
+    border: 1px solid var(--white)
+    border-radius: 30px
+    svg
+        width: 21px
+        height: 21px
+        color: var(--white)
+        margin-right: 8px
+    svg,span
+        display: inline-block
+        vertical-align: middle    
+
+
+.homeSecF
+    padding: 85px 0  180px
+    @include respond-to(screen-520)
+        padding: 40px 0
+    &.bganim
+        padding: 55px 0  150px
+        background: var(--white) url('../../images/home/bui.png')
+        background-repeat: no-repeat
+        background-position: 0 100%
+        background-repeat: repeat-x
+        // animation: bganimate 60s linear infinite
+        @include respond-to(screen-520)
+            padding: 45px 0 70px
+    .heading
+        max-width: 636px
+        width: 100%
+        margin: 0 auto
+        text-align: center
+        margin-bottom: 55px
+        @include respond-to(screen-520)
+            margin-bottom: 10px
+        h2
+            color: var(--black)     
+            margin-bottom: 8px   
+            @include respond-to(screen-520)
+                line-height: 28px
+                max-width: 280px
+                margin: 0 auto 15px
+    .slidec      
+        .item
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            min-height: 95px
+            img
+                width: auto
+                display: block
+                margin: 0 auto
+                @include respond-to(screen-520)
+                    padding: 0 18px 
+        .owl-dots
+            @include respond-to(screen-520)
+                margin-top: 0
+    &.animate
+        .heading
+            h2,p
+                transform: translateY(50px)
+                opacity: 0
+                transition: .8s ease
+        &.entered
+            .heading
+                h2,p
+                    transform: translateY(0px)
+                    opacity: 1
+                h2
+                    transition-delay: .2s
+                p
+                    transition-delay: .5s
+.bullet
+    padding-left: 15px
+    li
+        display: block
+        position: relative
+        margin-bottom: 18px
+        padding-left: 20px
+        &::before
+            content: ""
+            position: absolute
+            left: 0
+            top: 7px
+            width: 8px
+            height: 8px
+            background: var(--btnbg)
+            border-radius: 10px        
+.fancybox-container 
+    .fancybox-bg
+        background: #000000d6            
+    .fancybox-button
+        background: transparent
+
+.ani-left
+    overflow: hidden
+    >*
+        transform: translateX(-50px)  
+        opacity: 0
+        transition: 1s ease      
+.ani-right
+    overflow: hidden
+    >*
+        transform: translateX(50px)    
+        opacity: 0
+        transition: 1s ease    
+.animHeadi
+    h2,p
+        transform: translateY(50px)
+        opacity: 0
+        transition: .8s ease
+.scalAni
+    img,svg
+        opacity: 0
+        transform: scale(3)
+        transition: .7s ease
+.entered
+    .ani-left>*,.ani-right>*
+        transform: translate(0)
+        opacity: 1
+    .animHeadi
+        h2,p
+            transform: translateY(0px)
+            opacity: 1
+        h2
+            transition-delay: .2s
+        p
+            transition-delay: .5s
+    .scalAni
+        img,svg
+            opacity: 1
+            transform: scale(1)
